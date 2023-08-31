@@ -1,7 +1,7 @@
 import random
 
 # List of classrom
-names = [
+names: list[str] = [
     "Lukas",
     "Henrik",
     "Mathilde",
