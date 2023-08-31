@@ -1,8 +1,0 @@
-Knapp som generer to og to plasser
-//Text box som lærer kan skrive elever inn på
-class/funksjon som henter ut elever fra evt txt, csv...
-
-Mathilde:
-Lukas:
-Henrik
-David:
