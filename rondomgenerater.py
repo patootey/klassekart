@@ -1,9 +1,39 @@
 import random
 
-# List of classrom 
-names = ["Lukas", "Henrik", "Mathilde", "David", "Morten", "Mari_S", "Mari_R", "Ida", "Sophie", "Hooman", "Morits",
-         "Sebastian", "Andreas", "Tor", "Mohammed", "Valeria", "Leo", "Amiin", "Ole", "Benjamin", "Sanna", "Tina", "Yasmina", 
-         "Awan", "Hevy", "Erik", "Tjark", "Gustav", "Vebjorn", "Ulrykk", "even"]
+# List of classrom
+names = [
+    "Lukas",
+    "Henrik",
+    "Mathilde",
+    "David",
+    "Morten",
+    "Mari_S",
+    "Mari_R",
+    "Ida",
+    "Sophie",
+    "Hooman",
+    "Morits",
+    "Sebastian",
+    "Andreas",
+    "Tor",
+    "Mohammed",
+    "Valeria",
+    "Leo",
+    "Amiin",
+    "Ole",
+    "Benjamin",
+    "Sanna",
+    "Tina",
+    "Yasmina",
+    "Awan",
+    "Hevy",
+    "Erik",
+    "Tjark",
+    "Gustav",
+    "Vebjorn",
+    "Ulrykk",
+    "even",
+]
 
 # Shuffle the list of names randomly
 random.shuffle(names)
@@ -22,7 +52,6 @@ while names:
         # Take the remaining names as a group
         group = names
         names = []
-
 
     sitting_groups.append(group)
 
