@@ -10,7 +10,7 @@ r.geometry("400x300")
 def main(root):
     ge.prevpage = ge.keep_page(root)
     ge.clear_window(root)
-    button = ge.Button(root, text="Generer Klasse", command=lambda: test.wowow(root))
+    button = ge.Button(root, text="Generer Klasse", command=lambda: test.generate_groups(test.names))
     button2 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
     root.mainloop()
 
