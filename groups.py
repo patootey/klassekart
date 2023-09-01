@@ -5,9 +5,9 @@ import random  # Importerer random-modulen for å generere tilfeldige tall
 class Group:
     def __init__(self, pupils):
         self.pupils = pupils  # En liste som inneholder elever i gruppen
-        self.padx = 5  # Padding-verdi for x-aksen (ikke brukt i koden)
-        self.pady = 5  # Padding-verdi for y-aksen (ikke brukt i koden)
-        self.border = 3  # Border-verdi for rammene rundt gruppen (ikke brukt i koden)
+        self.padx = 5  # Padding-verdi for x-aksen
+        self.pady = 5  # Padding-verdi for y-aksen
+        self.border = 3  # Border-verdi for rammene rundt gruppen
 
 
 # Definisjon av klassen 'Pupil' for å representere en elev
@@ -19,7 +19,6 @@ class Pupil:
         self.label = None  # En widget-etikett som representerer eleven i GUI-en
 
     def click(self, groups):
-        print("Trykk")  # En melding som skrives ut når eleven blir klikket på
         self.selected = (
             True if self.selected is False else False
         )  # Endrer statusen på eleven
