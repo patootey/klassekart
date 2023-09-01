@@ -14,10 +14,11 @@ def display_class(root):
         frame = tk.Frame(main_frame)
         g = 0
         for i in group.pupils:
-            label = tk.Label(frame, text=i, relief='solid')
+            label = tk.Label(frame, text=i, relief='solid',borderwidth=group.border)
+            label.bind("<Button-1>", lambda event, group=group, label=label: group.click(label))
             label.grid(column=g ,row=0)
             g+=1
-        frame.grid(column=x, row=y, padx=10, pady=10)
+        frame.grid(column=x, row=y, padx=group.padx, pady=group.padx)
         x+=1
         if x > 2:
             y+=1
