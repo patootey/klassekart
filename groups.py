@@ -8,11 +8,13 @@ class Group:
         self.pady = 5
         self.border = 3
 
+
 class Pupil:
     def __init__(self, name):
         self.name = name
         self.colour = "F0F0F0"
         self.selected = False
+
     def click(self, label, groups):
         self.selected = True if self.selected is False else False
         self.colour = "Red" if self.selected is True else "#F0F0F0"
@@ -26,49 +28,16 @@ class Pupil:
                     group[pupil] = self
                     self = pupil
         label.config(bg=self.colour)
-        
 
 
-# List of classrom
-names: list[str] = [
-    "Lukas",
-    "Henrik",
-    "Mathilde",
-    "David",
-    "Morten",
-    "Mari_S",
-    "Mari_R",
-    "Ida",
-    "Sophie",
-    "Hooman",
-    "Morits",
-    "Sebastian",
-    "Andreas",
-    "Tor",
-    "Mohammed",
-    "Valeria",
-    "Leo",
-    "Amiin",
-    "Ole",
-    "Benjamin",
-    "Sanna",
-    "Tina",
-    "Yasmina",
-    "Awan",
-    "Hevy",
-    "Erik",
-    "Tjark",
-    "Gustav",
-    "Vebjorn",
-    "Ulrykk",
-    "even",
-    "maren",
-    "jonas",
-    "henrik",
-    "mathilde",
-    "linnea",
-    "jabob",
-]
+def read_file():
+    global name_list
+    names = []
+    with open("import_elever.txt", "r") as my_file:
+        names = my_file.readlines()
+
+    # Create a new array to store the names
+    name_list = [name.strip() for name in names]
 
 
 def generate_groups(names):
@@ -106,3 +75,6 @@ def generate_groups(names):
             groups.remove(i)
 
     return groups
+
+
+read_file()

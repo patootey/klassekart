@@ -5,7 +5,7 @@ import groups as rg
 
 def display_class(root):
     ge.prevpage = ge.keep_page(root)
-    groups = rg.generate_groups(rg.names)
+    groups = rg.generate_groups(rg.name_list)
     main_frame = tk.Frame(root)
     main_frame.place(y=50)
     x, y = 0, 0
