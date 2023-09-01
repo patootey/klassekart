@@ -1,7 +1,7 @@
 import tkinter as tk
 import general as ge
 from PIL import Image, ImageTk
-import test
+import groups
 import display_class as dc
 
 r = tk.Tk()

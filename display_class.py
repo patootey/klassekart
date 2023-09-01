@@ -1,6 +1,6 @@
 import tkinter as tk
 import general as ge
-import test as rg
+import groups as rg
 
 
 def display_class(root):
