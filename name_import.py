@@ -12,6 +12,22 @@ def read_existing_names():
     return existing_names
 
 
+def delete_selected_name(name_listbox):
+    selected_index = name_listbox.curselection()  # Get the selected item index
+    if selected_index:
+        index = int(selected_index[0])  # Convert the selected index to an integer
+        name_to_delete = name_listbox.get(index)  # Get the name to delete
+        name_listbox.delete(index)  # Remove the selected item from the Listbox
+
+        # Remove the deleted name from the file
+        with open("import_elever.txt", "r") as my_file:
+            lines = my_file.readlines()
+        with open("import_elever.txt", "w") as my_file:
+            for line in lines:
+                if line.strip() != name_to_delete:
+                    my_file.write(line)
+
+
 def all(root):
     ge.prevpage = ge.keep_page(root)
     frame = tk.Frame(root)
@@ -24,6 +40,14 @@ def all(root):
     # Create a Listbox to display names
     name_listbox = tk.Listbox(frame)
     name_listbox.grid(column=3, row=0)
+
+    # Create a Scrollbar to scroll through the existing names
+    scrollbar = tk.Scrollbar(frame, orient="vertical")
+    scrollbar.grid(row=0, column=4, sticky=tk.NS)
+
+    # Attach the Scrollbar to the Listbox
+    name_listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=name_listbox.yview)
 
     # Populate the Listbox with existing names
     existing_names = read_existing_names()
@@ -41,6 +65,13 @@ def all(root):
         # Update the Listbox with the new name
         name_listbox.insert(tk.END, name)
 
+    delete_button = tk.Button(
+        frame,
+        text="Delete",
+        command=lambda: delete_selected_name(name_listbox),
+        bg="red",
+    )
+    delete_button.grid(column=1, row=1)
     tk.Button(frame, text="Write to a file", command=write_file, bg="turquoise").grid(
         column=1, row=3
     )
