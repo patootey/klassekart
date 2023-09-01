@@ -2,6 +2,14 @@ mathilde
 henrik
 lukas
 David
+<<<<<<< HEAD
 kong
 baba
 platf
+=======
+henni
+jaboob
+Thuva
+Thuuu
+lkklllkkllk
+>>>>>>> 1d6bf1af06752e9a5e91ef44f1534d7c972a66f6

@@ -1,7 +1,5 @@
 import tkinter as tk
 import general as ge
-from PIL import Image, ImageTk
-import groups
 import display_class as dc
 import name_import
 
@@ -14,10 +12,10 @@ def main(root):
     button = ge.Button(
         root, text="Generer Klasse", command=lambda: dc.display_class(root)
     )
-    button2 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
-    button3 = ge.Button(
+    button2 = ge.Button(
         root, text="Legg til elever", command=lambda: name_import.all(root)
     )
+    button3 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
     root.mainloop()
 
 

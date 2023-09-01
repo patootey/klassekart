@@ -1,4 +1,5 @@
 import random
+import tkinter as tk
 
 
 class Group:
@@ -7,50 +8,43 @@ class Group:
         self.padx = 5
         self.pady = 5
         self.border = 3
+
+
+class Pupil:
+    def __init__(self, name):
+        self.name = name
+        self.colour = "F0F0F0"
         self.selected = False
-        self.border_colour = "#F0F0F0"
+        self.label = None
 
-    def click(self, label):
-        print("start")
+    def click(self, groups):
+        print("Trykk")
         self.selected = True if self.selected is False else False
-        self.border_colour = "Red" if self.selected is True else "#F0F0F0"
-        label.config(bg=self.border_colour)
+        self.colour = "Red" if self.selected is True else "#F0F0F0"
+        self.label.config(bg=self.colour)
+        for group in groups:
+            for pupil in group.pupils:
+                if pupil.selected == True and pupil != self:
+                    self.selected = False
+                    self.colour = "#F0F0F0"
+                    pupil.selected = False
+                    pupil.colour = "#F0F0F0"
+                    i = pupil.name
+                    pupil.name = self.name
+                    self.name = i
+                    self.label.config(text=self.name, bg=self.colour)
+                    pupil.label.config(text=pupil.name, bg=pupil.colour)
+                print(pupil.name)
 
 
-# List of classrom
-names: list[str] = [
-    "Lukas",
-    "Henrik",
-    "Mathilde",
-    "David",
-    "Morten",
-    "Mari_S",
-    "Mari_R",
-    "Ida",
-    "Sophie",
-    "Hooman",
-    "Morits",
-    "Sebastian",
-    "Andreas",
-    "Tor",
-    "Mohammed",
-    "Valeria",
-    "Leo",
-    "Amiin",
-    "Ole",
-    "Benjamin",
-    "Sanna",
-    "Tina",
-    "Yasmina",
-    "Awan",
-    "Hevy",
-    "Erik",
-    "Tjark",
-    "Gustav",
-    "Vebjorn",
-    "Ulrykk",
-    "even",
-]
+def read_file():
+    global name_list
+    names = []
+    with open("import_elever.txt", "r") as my_file:
+        names = my_file.readlines()
+
+    # Create a new array to store the names
+    name_list = [name.strip() for name in names]
 
 
 def generate_groups(names):
@@ -75,8 +69,12 @@ def generate_groups(names):
         sitting_groups.append(group)
 
     groups = []
-    for i in sitting_groups:
-        groups.append(Group(i))
+    for group in sitting_groups:
+        temp_group = []
+        for name in group:
+            temp_group.append(Pupil(name))
+        groups.append(Group(temp_group))
+    print(groups)
 
     for i in groups:
         if len(i.pupils) < 2:
