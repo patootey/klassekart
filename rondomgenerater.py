@@ -1,32 +1,32 @@
 import random
 
-# List of classrom 
+#Klasseliste 
 names = ["Lukas", "Henrik", "Mathilde", "David", "Morten", "Mari_S", "Mari_R", "Ida", "Sophie", "Hooman", "Morits",
          "Sebastian", "Andreas", "Tor", "Mohammed", "Valeria", "Leo", "Amiin", "Ole", "Benjamin", "Sanna", "Tina", "Yasmina", 
-         "Awan", "Hevy", "Erik", "Tjark", "Gustav", "Vebjorn", "Ulrykk", "even"]
+         "Awan", "Hevy", "Erik", "Tjark", "Gustav", "Vebjorn", "Ulrykk", "Even"]
 
-# Shuffle the list of names randomly
+#Stokker navnene tilfeldig
 random.shuffle(names)
 
-# list to store pairs or groups
+#Liste av par og grupper
 sitting_groups = []
 
-# Loop through the shuffled names
+#Løkker rundt navnene
 while names:
-    # Check if there are at least 2 names remaining
+    #Sjekker om det er minst to navn igjen
     if len(names) >= 2:
-        # Take two names for a pair
+        #tar to navn for ett par
         group = names[:2]
         names = names[2:]
     else:
-        # Take the remaining names as a group
+        #Setter de gjennstående navn i grupper
         group = names
         names = []
 
 
     sitting_groups.append(group)
 
-# Print the groups
+#Skriver ut gruppene
 for i, group in enumerate(sitting_groups, start=1):
     group_str = ", ".join(group)
     print(f"Group {i}: {group_str}")
