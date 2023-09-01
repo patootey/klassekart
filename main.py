@@ -1,9 +1,9 @@
-import tkinter as tk
-import general as ge
-import display_class as dc
-import name_import
-import os
-import sys
+import tkinter as tk  # Importerer tkinter-biblioteket for GUI
+import general as ge  # Importerer en egenlagd modul 'general' for generelle funksjoner
+import display_class as dc  # Importerer en egenlagd modul 'display_class' for å vise klassen
+import name_import  # Importerer en egenlagd modul 'name_import' for import av navn
+import os  # Importerer os-modulen for å jobbe med operativsystemet
+import sys  # Importerer sys-modulen for systemspesifikke funksjoner
 
 r = tk.Tk()  # Oppretter et hovedvindu (root) for GUI-en
 r.title("Lag et klassekart")  # Setter tittelen på vinduet
@@ -55,6 +55,7 @@ ge.save_widget(arrow.label)
 ge.save_widget(home_button.label)
 
 if __name__ == "__main__":
-    # 
-    main(r)
-    r.mainloop()
+    # Inngangspunktet når skriptet kjøres direkte
+
+    main(r)  # Kaller hovedfunksjonen 'main' med hovedvinduet (r) som argument
+    r.mainloop()  # Starter hovedløkka for GUI-en for å vise vinduet og håndtere hendelser
