@@ -78,6 +78,3 @@ def generate_groups(names):
             groups.remove(i)
 
     return groups
-
-
-read_file()
