@@ -2,27 +2,5 @@ mathilde
 henrik
 lukas
 David
-<<<<<<< HEAD
-kong
-baba
-platf
-=======
-henni
-jaboob
-Thuva
-Thuuu
-lkklllkkllk
-<<<<<<< HEAD
->>>>>>> 1d6bf1af06752e9a5e91ef44f1534d7c972a66f6
-lopas
-gaidys
-chulululalonkong
-molo
-molo
-lolkj
 
-=======
-MAthilde
-Henniiii
-hklkm
->>>>>>> 471bf2c0afb5cc661e2e65ac5ae899d93a3d92eb
+
