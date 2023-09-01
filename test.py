@@ -68,11 +68,10 @@ def generate_groups(names):
 
     for i in groups:
         if len(i.pupils) < 2:
-            groups[len(groups)-2].pupils.append(i.pupils[0])
+            groups[len(groups)-3].pupils.append(i.pupils[0])
             groups.remove(i)
 
-    for i in groups:
-        print(i.pupils)
+    return groups
 
 
 
