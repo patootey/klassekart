@@ -2,3 +2,6 @@ mathilde
 henrik
 lukas
 David
+kong
+baba
+platf
