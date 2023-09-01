@@ -4,17 +4,8 @@ import random
 class Group:
     def __init__(self, pupils):
         self.pupils = pupils
-        self.padx = 5
-        self.pady = 5
-        self.border = 3
-        self.selected = False
-        self.border_colour = "#F0F0F0"
-
-    def click(self, label):
-        print("start")
-        self.selected = True if self.selected is False else False
-        self.border_colour = "Red" if self.selected is True else "#F0F0F0"
-        label.config(bg=self.border_colour)
+        self.desk_size = (30, 20)
+        self.border = 10
 
 
 # List of classrom
