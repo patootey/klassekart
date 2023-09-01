@@ -16,7 +16,6 @@ class Pupil:
     def click(self, label, groups):
         self.selected = True if self.selected is False else False
         self.colour = "Red" if self.selected is True else "#F0F0F0"
-        label.config(bg=self.colour)
         for group in groups:
             for pupil in group.pupils:
                 if pupil.selected == True and pupil != self:
@@ -26,7 +25,7 @@ class Pupil:
                     pupil = "#F0F0F0"
                     group[pupil] = self
                     self = pupil
-
+        label.config(bg=self.colour)
         
 
 
