@@ -1,27 +1,32 @@
-import random
-import tkinter as tk
+import random  # Importerer random-modulen for å generere tilfeldige tall
 
 
+# Definisjon av klassen 'Group' for å representere grupper av elever
 class Group:
     def __init__(self, pupils):
-        self.pupils = pupils
-        self.padx = 5
-        self.pady = 5
-        self.border = 3
+        self.pupils = pupils  # En liste som inneholder elever i gruppen
+        self.padx = 5  # Padding-verdi for x-aksen (ikke brukt i koden)
+        self.pady = 5  # Padding-verdi for y-aksen (ikke brukt i koden)
+        self.border = 3  # Border-verdi for rammene rundt gruppen (ikke brukt i koden)
 
 
+# Definisjon av klassen 'Pupil' for å representere en elev
 class Pupil:
     def __init__(self, name):
-        self.name = name
-        self.colour = "F0F0F0"
-        self.selected = False
-        self.label = None
+        self.name = name  # Navnet til eleven
+        self.colour = "F0F0F0"  # Farge for visuell representasjon (standard er grå)
+        self.selected = False  # Status for om eleven er valgt
+        self.label = None  # En widget-etikett som representerer eleven i GUI-en
 
     def click(self, groups):
-        print("Trykk")
-        self.selected = True if self.selected is False else False
-        self.colour = "Red" if self.selected is True else "#F0F0F0"
-        self.label.config(bg=self.colour)
+        print("Trykk")  # En melding som skrives ut når eleven blir klikket på
+        self.selected = (
+            True if self.selected is False else False
+        )  # Endrer statusen på eleven
+        self.colour = (
+            "Red" if self.selected is True else "#F0F0F0"
+        )  # Endrer fargen basert på valgstatus
+        self.label.config(bg=self.colour)  # Oppdaterer fargen til etiketten
         for group in groups:
             for pupil in group.pupils:
                 if pupil.selected == True and pupil != self:
@@ -37,32 +42,34 @@ class Pupil:
                 print(pupil.name)
 
 
+# Funksjon for å lese navnene fra en fil
 def read_file():
-    global name_list
+    global name_list  # En global variabel som inneholder navnelisten
     names = []
     with open("import_elever.txt", "r") as my_file:
         names = my_file.readlines()
 
-    # Create a new array to store the names
+    # Oppretter en ny liste for å lagre navnene uten linjeskift
     name_list = [name.strip() for name in names]
 
 
+# Funksjon for å generere grupper av elever
 def generate_groups(names):
-    # Shuffle the list of names randomly
+    # Blander listen med navn tilfeldig
     random.shuffle(names)
 
-    # list to store pairs or groups
+    # Liste for å lagre par eller grupper
     sitting_groups = []
 
-    # Loop through the shuffled names
+    # Går gjennom de tilfeldig sorterte navnene
     while names:
-        # Check if there are at least 2 names remaining
+        # Sjekker om det er minst 2 navn igjen
         if len(names) >= 2:
-            # Take two names for a pair
+            # Tar de to første navnene som et par
             group = names[:2]
             names = names[2:]
         else:
-            # Take the remaining names as a group
+            # Tar de gjenværende navnene som en gruppe
             group = names
             names = []
 
