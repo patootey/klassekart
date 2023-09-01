@@ -14,16 +14,18 @@ class Pupil:
         self.colour = "F0F0F0"
         self.selected = False
     def click(self, label, groups):
+        print("Trykk")
         self.selected = True if self.selected is False else False
         self.colour = "Red" if self.selected is True else "#F0F0F0"
         for group in groups:
             for pupil in group.pupils:
                 if pupil.selected == True and pupil != self:
+                    print("to trykk")
                     self.selected = False
                     self.colour = "#F0F0F0"
-                    pupil = False
-                    pupil = "#F0F0F0"
-                    group[pupil] = self
+                    pupil.selected = False
+                    pupil.colour = "#F0F0F0"
+                    group.pupils[group.pupils.index(pupil)] = self
                     self = pupil
         label.config(bg=self.colour)
         
