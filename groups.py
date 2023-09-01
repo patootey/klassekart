@@ -21,6 +21,7 @@ class Pupil:
         self.colour = "Red" if self.selected is True else "#F0F0F0"
         for group in groups:
             for pupil in group.pupils:
+                print(pupil.selected)
                 if pupil.selected == True and pupil != self:
                     print("to trykk")
                     self.selected = False
