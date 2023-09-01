@@ -84,3 +84,5 @@ savedWidgets = []
 def save_widget(widget):
     global savedWidgets
     savedWidgets.append(widget)
+
+ 
