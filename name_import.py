@@ -60,7 +60,6 @@ def all(root):
     # Funksjon for å legge til et navn i Listbox og filen
     def write_file():
         name = name_entry.get()
-        write_list.append(name)
         with open("import_elever.txt", "a") as my_file:
             my_file.write(name + "\n")
 

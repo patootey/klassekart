@@ -1,7 +1,9 @@
 import tkinter as tk  # Importerer tkinter-biblioteket for GUI
-import general as ge  # Importerer en egenlagd modul 'general' som inneholder et navigasjonssystem
-import display_class as dc  # Importerer en egenlagd modul 'display_class'
-import name_import  # Importerer en egenlagd modul 'name_import'
+import general as ge  # Importerer en egenlagd modul 'general' for generelle funksjoner
+import display_class as dc  # Importerer en egenlagd modul 'display_class' for å vise klassen
+import name_import  # Importerer en egenlagd modul 'name_import' for import av navn
+import os  # Importerer os-modulen for å jobbe med operativsystemet
+import sys  # Importerer sys-modulen for systemspesifikke funksjoner
 
 r = tk.Tk()  # Oppretter et hovedvindu (root) for GUI-en
 r.title("Lag et klassekart")  # Setter tittelen på vinduet
@@ -28,6 +30,13 @@ def main(root):
 def exit(root):
     root.destroy()
 
+# Determine the path to the images directory
+if getattr(sys, 'frozen', False):
+    # Running as a PyInstaller executable
+    script_dir = sys._MEIPASS
+else:
+    # Running as a script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Oppretter en 'Hjem'-knapp med et bilde og knytter den til hovedfunksjonen 'main'
 home_button = ge.Photo(
@@ -42,5 +51,8 @@ arrow = ge.Photo(
 ge.save_widget(arrow.label)
 ge.save_widget(home_button.label)
 
-# Kaller hovedfunksjonen 'main' for å starte programmet
-main(r)
+if __name__ == "__main__":
+    # Inngangspunktet når skriptet kjøres direkte
+
+    main(r)  # Kaller hovedfunksjonen 'main' med hovedvinduet (r) som argument
+    r.mainloop()  # Starter hovedløkka for GUI-en for å vise vinduet og håndtere hendelser
