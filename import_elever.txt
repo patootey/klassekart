@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+mathilde
+henrik
+lukas
+David
+
+
+=======
+>>>>>>> b7547af5290f0ee1a7e1197e184172d595361e9f
