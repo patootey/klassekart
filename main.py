@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-import tkinter as tk
-import general as ge
-import display_class as dc
-import name_import
-import os
-import sys
-=======
 import tkinter as tk  # Importerer tkinter-biblioteket for GUI
-import general as ge  # Importerer en egenlagd modul 'general' som inneholder et navigasjonssystem
-import display_class as dc  # Importerer en egenlagd modul 'display_class'
-import name_import  # Importerer en egenlagd modul 'name_import'
->>>>>>> 58849aa96e52c7e612ebf4cd80d0bb8ff28b6264
+import general as ge  # Importerer en egenlagd modul 'general' for generelle funksjoner
+import display_class as dc  # Importerer en egenlagd modul 'display_class' for å vise klassen
+import name_import  # Importerer en egenlagd modul 'name_import' for import av navn
+import os  # Importerer os-modulen for å jobbe med operativsystemet
+import sys  # Importerer sys-modulen for systemspesifikke funksjoner
+
 
 r = tk.Tk()  # Oppretter et hovedvindu (root) for GUI-en
 r.title("Lag et klassekart")  # Setter tittelen på vinduet
@@ -30,31 +24,25 @@ def main(root):
     )
     # Oppretter en knapp for å avslutte programmet og knytter den til en funksjon 'exit'
     button3 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
-<<<<<<< HEAD
-=======
-    root.mainloop()  # Starter GUI-hovedløkka for å vise vinduet
 
->>>>>>> 58849aa96e52c7e612ebf4cd80d0bb8ff28b6264
 
 # Definerer en funksjon for å avslutte programmet og lukke vinduet
 def exit(root):
     root.destroy()
 
+
 # Determine the path to the images directory
-if getattr(sys, 'frozen', False):
+if getattr(sys, "frozen", False):
     # Running as a PyInstaller executable
     script_dir = sys._MEIPASS
 else:
     # Running as a script
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-<<<<<<< HEAD
 home_image_path = os.path.join(script_dir, "images", "home.png")
 arrow_image_path = os.path.join(script_dir, "images", "arrow.png")
-home_image_path.replace('\','/')
-=======
+# home_image_path.replace('\','/')
 # Oppretter en 'Hjem'-knapp med et bilde og knytter den til hovedfunksjonen 'main'
->>>>>>> 58849aa96e52c7e612ebf4cd80d0bb8ff28b6264
 home_button = ge.Photo(
     r, home_image_path, size=(40, 40), position=(40, 0), bind=lambda: main(r)
 )
@@ -67,12 +55,8 @@ arrow = ge.Photo(
 ge.save_widget(arrow.label)
 ge.save_widget(home_button.label)
 
-<<<<<<< HEAD
 if __name__ == "__main__":
-    # Entry point when running the script directly
-    main(r)
-    r.mainloop()
-=======
-# Kaller hovedfunksjonen 'main' for å starte programmet
-main(r)
->>>>>>> 58849aa96e52c7e612ebf4cd80d0bb8ff28b6264
+    # Inngangspunktet når skriptet kjøres direkte
+
+    main(r)  # Kaller hovedfunksjonen 'main' med hovedvinduet (r) som argument
+    r.mainloop()  # Starter hovedløkka for GUI-en for å vise vinduet og håndtere hendelser
