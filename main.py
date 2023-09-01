@@ -4,6 +4,7 @@ import display_class as dc
 import name_import
 
 r = tk.Tk()
+r.title("Lag et klassekart")
 r.geometry("400x300")
 
 
