@@ -1,7 +1,5 @@
 import tkinter as tk
 import general as ge
-from PIL import Image, ImageTk
-import groups
 import display_class as dc
 import name_import
 
