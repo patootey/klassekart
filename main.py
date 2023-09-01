@@ -38,17 +38,13 @@ else:
     # Running as a script
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-home_image_path = os.path.join(script_dir, "images", "home.png")
-arrow_image_path = os.path.join(script_dir, "images", "arrow.png")
-home_image_path = home_image_path.replace('\\', '/')
-arrow_image_path = arrow_image_path.replace('\\', '/')
 # Oppretter en 'Hjem'-knapp med et bilde og knytter den til hovedfunksjonen 'main'
 home_button = ge.Photo(
-    r, home_image_path, size=(40, 40), position=(40, 0), bind=lambda: main(r)
+    r, "./images/home.png", size=(40, 40), position=(40, 0), bind=lambda: main(r)
 )
 # Oppretter en 'Pil'-knapp med et bilde og knytter den til en funksjon 'ge.load_page'
 arrow = ge.Photo(
-    r, arrow_image_path, size=(40, 40), bind=lambda: ge.load_page(r, ge.prevpage)
+    r, "./images/arrow.png", size=(40, 40), bind=lambda: ge.load_page(r, ge.prevpage)
 )
 
 # Lagrer knappene som widgets for senere bruk
