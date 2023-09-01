@@ -10,7 +10,6 @@ def display_class(root):
     main_frame.place(y=50)
     x, y = 0, 0
     for group in groups:
-        print(group.pupils)
         frame = tk.Frame(main_frame)
         g = 0
         for i in group.pupils:
