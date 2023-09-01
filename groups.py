@@ -10,12 +10,10 @@ class Group:
         self.selected = False
         self.border_colour = "#F0F0F0"
     def click(self, label):
+        print("start")
         self.selected = True if self.selected is False else False
         self.border_colour = "Red" if self.selected is True else "#F0F0F0"
         label.config(bg=self.border_colour)
-        print("ajdhdashj")
-
-
 
 
 # List of classrom
