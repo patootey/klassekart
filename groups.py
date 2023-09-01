@@ -7,13 +7,27 @@ class Group:
         self.padx = 5
         self.pady = 5
         self.border = 3
+
+class Pupil:
+    def __init__(self, name):
+        self.name = name
+        self.colour = "F0F0F0"
         self.selected = False
-        self.border_colour = "#F0F0F0"
-    def click(self, label):
-        print("start")
+    def click(self, label, groups):
         self.selected = True if self.selected is False else False
-        self.border_colour = "Red" if self.selected is True else "#F0F0F0"
-        label.config(bg=self.border_colour)
+        self.colour = "Red" if self.selected is True else "#F0F0F0"
+        label.config(bg=self.colour)
+        for group in groups:
+            for pupil in group.pupils:
+                if pupil.selected == True and pupil != self:
+                    self.selected = False
+                    self.colour = "#F0F0F0"
+                    pupil = False
+                    pupil = "#F0F0F0"
+                    group[pupil] = self
+                    self = pupil
+
+        
 
 
 # List of classrom
@@ -74,8 +88,12 @@ def generate_groups(names):
         sitting_groups.append(group)
 
     groups = []
-    for i in sitting_groups:
-        groups.append(Group(i))
+    for group in sitting_groups:
+        temp_group = []
+        for name in group:
+            temp_group.append(Pupil(name))
+        groups.append(Group(temp_group))
+    print(groups)
 
     for i in groups:
         if len(i.pupils) < 2:
