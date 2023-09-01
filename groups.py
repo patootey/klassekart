@@ -1,4 +1,5 @@
 import random
+import tkinter as tk
 
 
 class Group:
@@ -14,23 +15,26 @@ class Pupil:
         self.name = name
         self.colour = "F0F0F0"
         self.selected = False
+        self.label = None
 
-    def click(self, label, groups):
+    def click(self, groups):
         print("Trykk")
         self.selected = True if self.selected is False else False
         self.colour = "Red" if self.selected is True else "#F0F0F0"
+        self.label.config(bg=self.colour)
         for group in groups:
             for pupil in group.pupils:
-                print(pupil.selected)
                 if pupil.selected == True and pupil != self:
-                    print("to trykk")
                     self.selected = False
                     self.colour = "#F0F0F0"
                     pupil.selected = False
                     pupil.colour = "#F0F0F0"
-                    group.pupils[group.pupils.index(pupil)] = self
-                    self = pupil
-        label.config(bg=self.colour)
+                    i = pupil.name
+                    pupil.name = self.name
+                    self.name = i
+                    self.label.config(text=self.name, bg=self.colour)
+                    pupil.label.config(text=pupil.name, bg=pupil.colour)
+                print(pupil.name)
 
 
 def read_file():
