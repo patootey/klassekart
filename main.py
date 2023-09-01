@@ -4,6 +4,7 @@ import display_class as dc
 import name_import
 
 r = tk.Tk()
+r.title("Lag et klassekart")
 r.geometry("400x300")
 
 
@@ -13,7 +14,7 @@ def main(root):
         root, text="Generer Klasse", command=lambda: dc.display_class(root)
     )
     button2 = ge.Button(
-        root, text="Legg til elever", command=lambda: name_import.all(root)
+        root, text="Konfigurer elever", command=lambda: name_import.all(root)
     )
     button3 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
     root.mainloop()

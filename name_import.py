@@ -33,7 +33,7 @@ def all(root):
     frame = tk.Frame(root)
     write_list = []
 
-    tk.Label(frame, text="Input your name: ").grid(column=1, row=0)
+    tk.Label(frame, text="Skriv inn navn: ").grid(column=1, row=0)
     name_entry = tk.Entry(frame)
     name_entry.grid(column=2, row=0)
 
@@ -65,14 +65,14 @@ def all(root):
         # Update the Listbox with the new name
         name_listbox.insert(tk.END, name)
 
+    tk.Button(frame, text="Legg til elev", command=write_file, bg="turquoise").grid(
+        column=1, row=3
+    )
     delete_button = tk.Button(
         frame,
-        text="Delete",
+        text="Slett navn",
         command=lambda: delete_selected_name(name_listbox),
         bg="red",
     )
-    delete_button.grid(column=1, row=1)
-    tk.Button(frame, text="Write to a file", command=write_file, bg="turquoise").grid(
-        column=1, row=3
-    )
+    delete_button.grid(column=3, row=1)
     frame.place(y=70)
