@@ -50,6 +50,12 @@ names: list[str] = [
     "Vebjorn",
     "Ulrykk",
     "even",
+    "maren",
+    "jonas",
+    "henrik",
+    "mathilde",
+    "linnea",
+    "jabob",
 ]
 
 
