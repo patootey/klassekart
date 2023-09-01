@@ -1,16 +1,16 @@
 import tkinter as tk
 import general as ge
 from PIL import Image, ImageTk
-import test
+import groups
+import display_class as dc
 
 r = tk.Tk()
 r.geometry("400x300")
 
 
 def main(root):
-    ge.prevpage = ge.keep_page(root)
     ge.clear_window(root)
-    button = ge.Button(root, text="Generer Klasse", command=lambda: test.wowow(root))
+    button = ge.Button(root, text="Generer Klasse", command=lambda: dc.display_class(root))
     button2 = ge.Button(root, text="Avslutt", command=lambda: exit(root), colour="red")
     root.mainloop()
 
