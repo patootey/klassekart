@@ -1,9 +1,10 @@
 import random
 
+
 class Group:
     def __init__(self, pupils):
         self.pupils = pupils
-        self.desk_size = (30,20)
+        self.desk_size = (30, 20)
         self.border = 10
 
 
@@ -41,6 +42,8 @@ names: list[str] = [
     "Ulrykk",
     "even",
 ]
+
+
 def generate_groups(names):
     # Shuffle the list of names randomly
     random.shuffle(names)
@@ -68,10 +71,7 @@ def generate_groups(names):
 
     for i in groups:
         if len(i.pupils) < 2:
-            groups[len(groups)-3].pupils.append(i.pupils[0])
+            groups[len(groups) - 3].pupils.append(i.pupils[0])
             groups.remove(i)
 
     return groups
-
-
-
