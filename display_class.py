@@ -45,6 +45,6 @@ def display_class(root):
         )  # Plasserer rammen i rutenettet
         x += 1  # Øker x-koordinaten
 
-        if x > 2:  # Sjekker om vi har nådd maksimalt antall kolonner (3)
+        if x > 2:  # Sjekker om vi har nådd maksimalt antall kolonner
             y += 1  # Øker y-koordinaten for å gå til neste rad
             x = 0  # Nullstiller x-koordinaten for å starte på ny kolonne
