@@ -4,6 +4,7 @@ import groups as rg
 
 
 def display_class(root):
+    rg.read_file()
     ge.prevpage = ge.keep_page(root)
     groups = rg.generate_groups(rg.name_list)
     main_frame = tk.Frame(root)
@@ -13,9 +14,12 @@ def display_class(root):
         frame = tk.Frame(main_frame)
         g = 0
         for i in group.pupils:
-            label = tk.Label(frame, text=i.name, relief="solid", borderwidth=group.border)
+            label = tk.Label(
+                frame, text=i.name, relief="solid", borderwidth=group.border
+            )
             label.bind(
-                "<Button-1>", lambda event, groups=groups, label=label: i.click(label, groups)
+                "<Button-1>",
+                lambda event, groups=groups, label=label: i.click(label, groups),
             )
             label.grid(column=g, row=0)
             g += 1
