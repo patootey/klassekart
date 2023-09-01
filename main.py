@@ -40,7 +40,8 @@ else:
 
 home_image_path = os.path.join(script_dir, "images", "home.png")
 arrow_image_path = os.path.join(script_dir, "images", "arrow.png")
-home_image_path.replace('\','/')
+home_image_path = home_image_path.replace('\\', '/')
+arrow_image_path = arrow_image_path.replace('\\', '/')
 # Oppretter en 'Hjem'-knapp med et bilde og knytter den til hovedfunksjonen 'main'
 home_button = ge.Photo(
     r, home_image_path, size=(40, 40), position=(40, 0), bind=lambda: main(r)
