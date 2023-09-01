@@ -30,13 +30,6 @@ def main(root):
 def exit(root):
     root.destroy()
 
-# Determine the path to the images directory
-if getattr(sys, 'frozen', False):
-    # Running as a PyInstaller executable
-    script_dir = sys._MEIPASS
-else:
-    # Running as a script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Oppretter en 'Hjem'-knapp med et bilde og knytter den til hovedfunksjonen 'main'
 home_button = ge.Photo(
